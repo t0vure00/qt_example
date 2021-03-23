@@ -23,6 +23,13 @@ const person = {
       [person.fname, person.lname, person.money, id],
       callback
     );
+  },
+  moneyAction: function(prodecure_params, callback) {
+    return db.query(
+      'CALL money_action (?,?)',
+      [prodecure_params.id, prodecure_params.amount],
+      callback
+    );
   }
 };
 module.exports = person;
