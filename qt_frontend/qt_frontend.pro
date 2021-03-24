@@ -1,5 +1,8 @@
 QT       += core gui
 
+QT +=network #kun halutaan lähettää http requesteja ja saada palvelin
+#vastaamaan JSON-muodossa
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
