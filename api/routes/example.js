@@ -17,6 +17,35 @@ router.get('/allpersons',//aletaan tekemään metodia, get metodia käytetään
     }
 );
 
+router.get('/oneperson/:id',
+    function(request, response){
+        example_sql.getOnePerson(request.params.id,
+            function(err, dbResult){
+                console.log(dbResult);
+                if(err){
+                    console.log(dbResult);//tämä tulostaa konsolille niinku esim git bash tai komentoikkuna
+                    response.json(err);
+                }
+                else {
+                    console.log(dbResult);
+                    response.json(dbResult[0]);//palautetaan arraystä vain eka alkio
+                }
+            })
+        }
+);
 
+router.get('/fullname/:id',
+        function(request,response){
+            example_sql.getFullName(request.params.id,
+                function(err, dbResult){
+                    if(err){
+                        response.json(err);
+                    }
+                    else{
+                        response.json(dbResult[0]);
+                    }
+                })    
+        }
+);
 
-module.exports = router;//tässä vastaava muuttujan nimi kuin ylllä olevassa const muuttujassa(käytetään siis sitä)
+module.exports = router; //tässä vastaava muuttujan nimi kuin ylllä olevassa const muuttujassa, käytetään siis sitä
