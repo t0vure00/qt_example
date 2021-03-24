@@ -28,7 +28,7 @@ router.get('/oneperson/:id',
                 }
                 else {
                     console.log(dbResult);
-                    response.json(dbResult[0]);//palautetaan arraystä vain eka alkio
+                    response.json(dbResult[0]);//palautetaan arraystä vain eka alkio/objekti
                 }
             })
         }
