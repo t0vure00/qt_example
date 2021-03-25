@@ -7,7 +7,7 @@ router.get('/allpersons',//aletaan tekemään metodia, get metodia käytetään
     function(request,response){//requestia ei käytetä kun yllä ei vaadita mitään parametrejä
         example_sql.getAllPersons(function(err, dbResult){//yllä näkyy, viitataan example_sql example_model tiedostoon mistä löytyy getAllPersons toteutus
             if(err){//koska on asynkroninen funktio pitää yllä taas viitata function ja annetaan sille kaksi parametria err ja dbResult tässä
-                response.json(err);//jos tietokannassa tulee virhe lähetetään tämä response err
+                response.json(err.errno);//jos tietokannassa tulee virhe lähetetään tämä response err
             }
             else{
                 response.json(dbResult);//jos ei, lähetetään dbResult
