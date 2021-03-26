@@ -24,9 +24,23 @@ private slots:
     void on_BgetAllPersons_clicked();
     void allPersonsSlot(QNetworkReply *reply);
 
+    void on_BgetOnePerson_clicked();
+    void OnePersonSlot(QNetworkReply *reply);
+
+    void on_BgetFullName_clicked();
+    void FullNameSlot(QNetworkReply *reply);
+
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager *allPersonsManager;//tehdään manageri
-    QNetworkReply *allPersonsreply;
+    QNetworkReply *allPersonsReply;
+
+    QNetworkAccessManager *OnePersonManager;//tehdään manageri
+    QNetworkReply *OnePersonReply;
+
+    QNetworkAccessManager *FullNameManager;//tehdään manageri
+    QNetworkReply *FullNameReply;
+
+    QString id;
 };
 #endif // MAINWINDOW_H
