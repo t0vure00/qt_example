@@ -24,7 +24,7 @@ router.get('/oneperson/:id',
                 console.log(dbResult);
                 if(err){
                     console.log(dbResult);//tämä tulostaa konsolille niinku esim git bash tai komentoikkuna
-                    response.json(err);
+                    response.json(err.errno);
                 }
                 else {
                     console.log(dbResult);
@@ -39,7 +39,7 @@ router.get('/fullname/:id',
             example_sql.getFullName(request.params.id,
                 function(err, dbResult){
                     if(err){
-                        response.json(err);
+                        response.json(err.errno);
                     }
                     else{
                         response.json(dbResult[0]);
